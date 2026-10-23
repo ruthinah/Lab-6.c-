@@ -1,0 +1,46 @@
+public class ArryList <5> implements
+List<E>{
+    private E[] listArray;
+    private int listSize;
+    private int curr;
+     @SuppressWarnings("unchecked")
+     public ArrayList(int maxSize) {
+        listArray =(E[]) new Object[maxSize];
+        listSize = 0;
+        curr = 0;
+     }
+     @SuppressWarnings("unchecked")
+
+     private void grow() {
+        E[]  bigger  =  (E[])    new
+        Object[listArry.length *2];
+        for(int i = 0; i<listSize; i++)  {
+            bigger[i] = listArray[i];
+
+          }
+          listArry = bigger;
+}
+
+@Override
+public void insert(E item){
+    if (listSize == listArray.length) {
+        grow();
+    }
+    for(int i = listSize; i> curr; i--) {
+        listArray[i] = listArry[i-1];
+
+    }
+
+    listArry[curr] = item;
+    listSize++
+}
+     @Overridepublic void clear(){
+        for(int i= 0; i <listSize; i++){
+            listArray[i] = null;
+
+        }
+        listSize = 0;
+        curr = 0;
+     }
+     
+}

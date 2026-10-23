@@ -1,0 +1,120 @@
+public class ArrayList<E>
+implements List<E>{
+    private E[] listArray;
+    private int listsize;
+    private int curr;
+    
+    @suppressWarnings("unchecked")
+    public ArrayList(int maxSize){
+        listArray = (E[]) new
+        Object[maxSize];
+        listSize = 0;
+        curr = 0;
+    }
+      
+    @suppressWarnings("unchecked")
+    private void grow(){
+        E[] bigger = (E[]) new
+        Object[listArray.lenght*2];
+        for(int i = 0; i<listSize; i++)0{
+            bigger[i]= listArray[i];
+        }
+        listArray = bigger;
+    }
+     @override
+     public void insert(E item){
+        if(listsize == listArray.length){
+            grow();
+        }
+        for(int i = listSize;i>curr; i--){
+            listArray[i] =listArray[i-1];
+        }
+        listArray[curr] = item;
+        listSize++;
+
+     } 
+     @override
+     public void Append(E item){
+        if(listsize == listArray.length){
+            grow();
+        }
+        listArray[listSize] = item;
+        listSize++;
+      
+    }@override
+     public E remove(){
+        if(curr<0 || curr >=listSize)
+        return null;
+        E temp = listArray[curr];
+        for(int i = curr;i<listSize-1;i++)
+        {
+            listArray[i] = listArray[i+1];
+        }
+        listArray[listSize-1]= null;
+        listSize--;
+        return temp;
+
+     } 
+     @override
+     public void  setFirst(E item){
+        curr = 0;
+     }
+ @override
+     public void  next(){
+        if(curr<listSize)
+        curr++;
+     }
+@override
+     public prev(){
+        if(curr>0)
+        curr--;
+     }
+      @override
+     public void  setPos(int Pos){
+        if(pos>= 0 && pos<=listSize)
+        curr = pos;
+     }
+
+ @override
+     public boolean isInList(){
+        if(curr <0 || curr >= listSize)
+        return false;
+
+        return true;
+     }
+ @override
+     public void SetValue(E val){
+        if(curr <0 || curr >= listSize){
+            throw new
+            IndexOutOfBoundsException("cursor isnt an element");
+
+        }
+          listArray[curr] = val;
+     }
+
+     }
+
+     @override
+     public E currValue(){
+        if(!isInList()){
+            return null;
+        }
+        return listArray[curr];
+     }
+
+     @override
+     public int lenght(){
+        return listSize;
+     }
+      @override
+     public boolean isEmpty(){
+        if(listSize == 0)
+        return true;
+        return false;
+     }
+     @overridepublic void print(){
+
+        for(int i = 0; i<listSize; i++)
+        System.out.println(listArry[i]);
+          }
+          }     }

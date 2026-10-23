@@ -1,0 +1,16 @@
+public interface List<E>{
+    void clear();
+    void insert(E item);
+    void append(E item);
+    E remove();
+    void setFirst();
+    void next();
+    void prev();
+    int length();
+    void setPos(int pos);
+    void setValue(E val);
+    E currValue();
+    boolean is Empty();
+    boolean isInList();
+    void print();
+}

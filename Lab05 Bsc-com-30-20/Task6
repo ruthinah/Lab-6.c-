@@ -1,0 +1,30 @@
+import java.util.ranndom;
+public class TestArrayList{
+    public static void main(String[] args){
+        ArrayList<Integer> intArrList = new ArrayList<Integer>(20);
+
+        Random rand = new Random();
+         for(int i= 0;i<18; i++){
+            int value =(rand.nextlnt(100));
+            intArrList.append(value);
+         }
+         intArrList.setPos(12);
+         intArryList.insert(57);
+         intArryList.insert(24);
+         intArryLIst.Insert(114);
+         /*The setPos() function will be ignored since 24 is greater than the size of the list
+         *3.d will not cause an error
+         *the curr remains at position 12 and it will move the value pos 12 to pos 13 and write 144 at pos 12 */
+
+         intArrList.print();
+         /*3.e does not, print stops at list size which is 20
+         * so posithion 24 will not be there for print*/
+          for(int i = 0 i<4; i++)
+
+          int value =rand.append(100);
+          intArrList.append(value);
+    }
+    System.out.println(intList.length());
+     intArrList.print();
+}
+} 

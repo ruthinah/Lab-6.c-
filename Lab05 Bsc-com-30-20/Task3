@@ -1,0 +1,41 @@
+import java.util.Random;
+public class ArrayListMemTest2{
+    static Random rand = new Random();
+    static class Point3D{
+        double w,x,y
+        Point3D(){
+            w = rand.nextDouble()*200-100;
+            x = rand.Double()*200-100;
+            y = rand.nextDouble()*200-100;
+                    }
+    }
+}
+
+public static void main(String[] args){
+    Runtime    runtime = Runtime.getRuntime();
+    Runtime.gc();
+    long totalMemory  = runtime.totalMemory();
+    long  freeMemory  = runtime.freeMemory();
+    long usedmemory = totalMemory- freeMemory;
+    System.out.println("BaseLine:" + used-Memory);
+    
+    ArrayList<Point3D> point3DArrayList = new ArrayList<>(20);
+    totalMemory = runtime.totalMemory();
+    freeMemory = runtime.freeMemory();
+
+    usedMemory = totalMemory-freeMemory;
+    System.println("Empty  List:" + usedMemory);
+    for (int i = 0; i<20; i++){
+        point3DArrayList.append(new Point3D());
+
+    }
+
+    totalMemory = runtime.totalMemory();
+    freeMemory = runtime.freeMemory();
+    usedMemory =totalMemory-freeMemory;
+
+    System.out.println("Appended List:" + usedMemory);
+
+}
+    
+}

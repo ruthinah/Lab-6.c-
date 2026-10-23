@@ -1,0 +1,41 @@
+import java.util.Random;
+public class ArrayListMemTest{
+    public static void main(String[]args){
+        Runtime  runtime  = Runtime.getRuntime();
+        runtime.gc();
+        //you should measure runtime while the list is empty
+
+        long totalMemory = runtime.totalMemory();
+
+        long freeMemory  =  runtime.freeMemory();
+        long usedMemory = totalMemory -freeMemory;
+
+        System.out.ptintln("BaseLine: " + used-Memory);
+
+        ArrayList<Integer> intArrList = new ArrayList<>(20);
+
+        totalMemory = runtime.totalMemory();
+        freeMemory = runtime.freeMemory();
+
+        usedMemory = totalMemory - freeMemory;
+
+        System.out.println("Empty List: " + usedMemory);
+        /* 4.c the number increased because the array of 20 was allocated to the memory the time it was constracted
+         *the capacity will cost alot of space*/
+
+
+        Random rand = new Random();
+        //appending integers and memory measurementg
+        for(int i = 0; i<20; i++){
+            int value = (rand.nextInt(100));
+            intArrList.append(value);
+        }
+        totalMemory = runtime.totalMemory();
+        freeMemory = runtime.freeMemory();
+
+        usedMemory = totalMemory - freeMemory;
+        System.out.println("Appended List: " + usedMemory);
+        /*4.e  there was no change in the number since we 20 was exactly appended then grow() can not run
+        * the memory catched small intergers because it was already pre-allocated to the array*/
+    }
+}
